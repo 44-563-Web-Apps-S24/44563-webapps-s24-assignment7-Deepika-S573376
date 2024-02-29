@@ -10,14 +10,18 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <h1>Deepika Speed Check</h1>
+
+    <h1>Deepika Speed Check</h1>
+  <h2>Timeout</h2>
   <div id="target">your time</div>
   <div id="counter">Count</div>
   <button type="button" id="startBtn" onclick="startTime()">Start timer</button>
   <button type="button" id="stopBtn" onclick="recordTime()">Stop timer</button>
+  
 
  <script>
         let stopTime = undefined;
+
         function recordTime() {
             stopTime = Date.now();
             console.log(stopTime);
@@ -25,7 +29,10 @@
 
         document.getElementById('stopBtn').onclick = recordTime;
         function startTime() {
-            for (let i = 0; i < 5; i++) {
+            
+            // Bonus random 
+            random = Math.floor(Math.random() * 9)+2;
+            for (let i = 0; i < random; i++) {
                 setTimeout(function() {
                     document.getElementById('counter').innerHTML = i;
                 }, (4 - i) * 1000);
@@ -40,7 +47,8 @@
             }, 4000);
         }
 
-        document.getElementById('startBtn').onclick = startTime;
-</script>
+        // document.getElementById('startBtn').onclick = startTime;
+    </script>
+
 </body>
 </html>
